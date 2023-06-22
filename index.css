@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +28,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 /*navigation */
-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +40,7 @@ header {
     transition: 0.6s;
   }
   
-  header .logo {
+  .header .logo {
     position: relative;
     font-weight: 700;
     color: #fff;
@@ -50,16 +52,16 @@ header {
     margin: 0.7rem;
   }
   
-  header .logo img {
+  .header .logo img {
     max-width: 40px;
-    filter: invert(1);
+    
   }
   
-  header .logo img:hover {
+  .header .logo img:hover {
     filter: invert(1) brightness(1000%);
   }
   
-  header #toggle {
+  .header #toggle {
     
     position: relative;
     height: 60px;
@@ -122,7 +124,7 @@ header {
   #navigation {
     position: fixed;
     top: 0;
-    right: -100vw;
+    right: -102vw;
     width: 300px;
     height: 100vh;
     background: cyan ;
@@ -199,7 +201,8 @@ header {
     width: 100%;
     height: 100vh;
     /*background: linear-gradient(to left, #8fb4f3, #19475f, #19475f);*/
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/header.jpeg);
+   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-clip: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -208,6 +211,27 @@ header {
     align-items: center;
     overflow: hidden;
     user-select: none;
+  }
+  
+  @media(min-aspect-ratio:16/9){
+    .back-video{
+      width:100%;
+      height:auto;
+    }
+  }
+  @media(max-aspect-ratio:16/9){
+    .back-video{
+      width:auto;
+      height:100%;
+    }
+  }
+  .back-video {
+  width: 100%;
+    min-height:100vh ;
+    object-fit: cover;
+    position: absolute;
+    overflow: hidden;
+    z-index:-1;
   }
  
   .main-section {
@@ -219,7 +243,9 @@ header {
     margin: 0;
   font-size: 180px;
   color: rgba(225,225,225, .01);
-  background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80");
+  border-width: 2px;
+  border-color: #000;
+  background-image: url("images/title.avif");
   background-repeat: repeat;
   -webkit-background-clip:text;
   animation: animate 15s ease-in-out infinite;
@@ -242,10 +268,58 @@ header {
     }   
 }
 .full{
+  font-family: "Montserrat Medium";
+  max-width: 40ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
     font-size:40px;
     color: #fff;
 }
-  
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
   /*responsive*/
 @media only screen and (max-width: 1200px) {
     .main-section h1 {
@@ -259,7 +333,7 @@ header {
       font-size: 7.5rem;
     }
     .full{
-        font-size:15px ;
+        font-size:30px ;
     }
     
   }
@@ -270,22 +344,201 @@ header {
       margin-bottom: 1rem;
     }
     .full p{
-        font-size: 10px;
+        font-size: 20px;
     }
-    .first-page{
-        width: 100%;
     
-        height: 100vh;
-        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/newimg.jpg);
-        background-size: cover;
-        background-image: fixed;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        user-select: none;
-         
+  }
+  .pre-loader{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    position:fixed;
+    align-items: center;
+    background-color: #000;
+    z-index: 10000;
+  }
+  .waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
     }
   }
+  button {
+    position: relative;
+    width: 11em;
+    height: 4em;
+    outline: none;
+    transition: 0.1s;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ddebf0;
+    cursor: pointer;
+  }
+  
+  #clip {
+    --color: #2761c3;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px double var(--color);
+    box-shadow: inset 0px 0px 15px #195480;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  .arrow {
+    position: absolute;
+    transition: 0.2s;
+    background-color: #2761c3;
+    top: 35%;
+    width: 11%;
+    height: 30%;
+  }
+  
+  #leftArrow {
+    left: -13.5%;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  }
+  
+  #rightArrow {
+    -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+    left: 102%;
+  }
+  
+  button:hover #rightArrow {
+    background-color: #27c39f;
+    left: -15%;
+    animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+  }
+  
+  button:hover #leftArrow {
+    background-color: #27c39f;
+    left: 103%;
+    animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #2761c3;
+    box-shadow: inset 1px 1px 8px #2781c3;
+    transform: scale(1) rotate(45deg);
+    transition: 0.2s;
+  }
+  
+  #rightTop {
+    top: -1.98em;
+    left: 91%;
+  }
+  
+  #leftTop {
+    top: -1.96em;
+    left: -3.0em;
+  }
+  
+  #leftBottom {
+    top: 2.10em;
+    left: -2.15em;
+  }
+  
+  #rightBottom {
+    top: 45%;
+    left: 88%;
+  }
+  
+  button:hover #leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  button:hover #rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  button:hover #rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  button:hover #leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+  }
+  
+  button:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+  }
+  
+  button:hover #clip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #27c39f;
+  }
+  
+  @keyframes changeColor8 {
+    from {
+      background-color: #2781c3;
+    }
+  
+    to {
+      background-color: #27c39f;
+    }
+  }
+  
+  @keyframes lightEffect8 {
+    from {
+      box-shadow: 1px 1px 5px #27c39f;
+    }
+  
+    to {
+      box-shadow: 0 0 2px #27c39f;
+    }
+  }
+  
+  @keyframes greenLight8 {
+    from {
+    }
+  
+    to {
+      box-shadow: inset 0px 0px 32px #27c39f;
+    }
+  }
+  
+  @keyframes leftArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(10px);
+    }
+  }
+  
+  @keyframes rightArrow8 {
+    from {
+      transform: translate(0px);
+    }
+  
+    to {
+      transform: translateX(-10px);
+    }
+  }
+  
+  
+  

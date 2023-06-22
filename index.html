@@ -9,9 +9,24 @@
   <script src="navbar.js" defer></script>
   <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
-</head><body>
+</head>
+<body>
+  <div class="pre-loader" id="pre-loader">
+    <div class="waviy">
+      <span style="--i:1">L</span>
+      <span style="--i:2">o</span>
+      <span style="--i:3">a</span>
+      <span style="--i:4">d</span>
+      <span style="--i:5">i</span>
+      <span style="--i:6">n</span>
+      <span style="--i:7">g</span>
+      <span style="--i:8">.</span>
+      <span style="--i:9">.</span>
+      <span style="--i:10">.</span>
+     </div>
+  </div>
 <section class="banner" id="sec">
-<header>
+<div class="header">
     <a href="#" class="logo"
       ><img src="./images/logo.png"
     /></a>
@@ -29,7 +44,7 @@
           transform="translate(480, 320) scale(1, -1) translate(-480, -318)"
         />
       </svg>
-    </header>
+    </div>
     <div id="navigation">
         <ul id="nav" onclick="toggle()">
           <li><a href="./index.html#">Home</a></li>
@@ -62,9 +77,30 @@
       </div>
     </section>
     <div class="first-page">
+      <video autoplay loop muted plays-inline class="back-video">
+        <source src="images/vid_1.mp4" type="video/mp4">
+      </video>
     <section class="main-section" id="home">
+      
     <h1>𝐘𝐄𝐒𝐓𝐀</h1>
-    <p class="full">Young Entrepreneur Skill and Talent Assessment</p>
+    <p class="full"><span>Young </span>
+      <span>Entrepreneur </span>
+      <span>Skill </span>
+      <span>and </span>   
+      <span>Talent </span>
+      <span>Assessment</span></p>
+    <br></br>
+    <button>
+      REGISTER
+      <div id="clip">
+          <div id="leftTop" class="corner"></div>
+          <div id="rightBottom" class="corner"></div>
+          <div id="rightTop" class="corner"></div>
+          <div id="leftBottom" class="corner"></div>
+      </div>
+      <span id="rightArrow" class="arrow"></span>
+      <span id="leftArrow" class="arrow"></span>
+  </button>
 </section>
 </div>
 <div class="about" id="about">
@@ -95,7 +131,13 @@
         
       }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+  var loader=document.getElementById('pre-loader');
+  window.addEventListener("load",function(){
+    loader.style.display="none";
+  })
+</script>
 
 </body>
 </html>
