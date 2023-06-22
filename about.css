@@ -1,0 +1,154 @@
+.about{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/aboutbac.jpg);
+    background-size: cover;
+    margin: auto;
+    padding: 0px;
+}
+
+.about h1{
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: dashed;
+    text-decoration-color: aliceblue;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background: -webkit-linear-gradient(45deg,red,yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(10px 8px 6px black);
+}
+
+.about h1:hover{
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate{
+    0%{
+        text-shadow: 0 0 10px #91d42e,0 0 20px #c1cd1c;
+    }
+}
+
+#intro h2,#esummit h2,#overview h2{
+    font-weight: bold;
+    color: #f5f50a;
+    opacity: 0;
+    animation: fade-in 2s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.intro h2,.esummit h2,.overview h2{
+    color: rgb(82, 239, 95);
+}
+
+.intro p,.esummit p,.overview p{
+    color: rgb(243, 236, 236);
+}
+
+#intro{
+    border-width: solid;
+    padding-left: 10px;
+    width: 650px;
+    padding-top: 10px;
+    overflow: auto;
+    resize: both;
+}
+#i{
+    padding-left: 150px;
+}
+
+#esummit{
+    border-width: solid;
+    padding-left: 10px;
+    width: 650px;
+    padding-top: 10px;
+    overflow: auto;
+    resize: both;
+}
+
+#es{
+    padding-left: 810px;
+    padding-right: 150px;
+}
+
+#overview{
+    border-width: solid;
+    padding-left: 10px;
+    width: 650px;
+    padding-top: 10px;
+    overflow: auto;
+    resize: both;
+}
+#ov{
+    padding-left: 150px;
+}
+
+
+#intro:hover,#esummit:hover,#overview:hover{
+
+}
+
+@media only screen and (max-width: 500px){
+    #es,#i,#ov{
+        padding-left: 10px;
+    }
+    #esummit,#overview,#intro{
+        width: 480px;
+    }
+}
+
+#intro:hover ,#esummit:hover ,#overview:hover {
+    border: 4px solid;
+    border-image: linear-gradient(#f18137,#af24dd);
+    animation: anim-border 2s ease-in infinite;
+}
+@keyframes anim-border{
+    50%{
+        border-image: linear-gradient(360deg,#f18137,#af24dd) 1;
+    }
+}
+
+
+/*  first letter of the strting para */
+
+.text::first-letter{
+    color: #ff0055;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+@keyframes move-it {
+    0% {
+      background-position: initial;
+    }
+    100% {
+      background-position: 100px 0px;
+    }
+  }
+  
+  #about {  
+    background: repeating-linear-gradient(
+    45deg,
+    #9292ef,
+    #83a6ec 5%,
+    #8ca3e0 5%,
+    #9696f3 10%
+  );
+    background-size: 100px 100px;
+    animation: move-it 2s linear infinite;
+  }
